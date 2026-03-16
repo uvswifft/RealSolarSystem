@@ -16,7 +16,7 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   check-secret:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     outputs:
       has-password: ${{ steps.has-password.outputs.defined }}
     steps:
@@ -91,7 +91,7 @@ jobs:
           cp -v -R "${GITHUB_WORKSPACE}/GameData" "${RELEASE_DIR}"
 
       - name: Upload artifacts
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v4
         with:
           name: RealSolarSystem
           path: ${{ steps.assemble-release.outputs.release-dir }}
