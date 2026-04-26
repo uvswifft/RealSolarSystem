@@ -39,9 +39,11 @@ using System.Runtime.InteropServices;
 #if CIBUILD
 [assembly: AssemblyVersion("@MAJOR@.@MINOR@.@PATCH@.@BUILD@")]
 [assembly: AssemblyFileVersion("@MAJOR@.@MINOR@.@PATCH@.@BUILD@")]
+[assembly: KSPAssembly("RealSolarSystem", @MAJOR@, @MINOR@, @PATCH@)]
 #else
 [assembly: AssemblyVersion("18.5.0.0")]
 [assembly: AssemblyFileVersion("18.5.0.0")]
+[assembly: KSPAssembly("RealSolarSystem", 21, 0, 0)]
 #endif
 
 [assembly: KSPAssemblyDependency("Kopernicus", 1, 0)]
