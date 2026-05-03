@@ -9,6 +9,8 @@ namespace RealSolarSystem
     [KSPAddon(KSPAddon.Startup.Flight, false)]
     public class RealSolarSystemEditor : MonoBehaviour
     {
+        internal static bool ForceVGPEOff = false;
+
         static Rect windowPosition = new Rect(64, 64, 320, 640);
         static GUIStyle windowStyle = null;
 
@@ -121,6 +123,13 @@ namespace RealSolarSystem
 
             _scrollPos = GUILayout.BeginScrollView(_scrollPos);
 
+            GUILayout.Label("Vessel ground pos enhancer");
+
+            GUILayout.BeginHorizontal();
+            ForceVGPEOff = GUILayout.Toggle(ForceVGPEOff, "Force off");
+            GUILayout.EndHorizontal();
+
+            GUILayout.Label("--------------");
             GUILayout.Label("RSSRunwayFix");
 
             GUILayout.BeginHorizontal();

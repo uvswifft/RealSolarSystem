@@ -39,6 +39,8 @@ namespace RealSolarSystem
 
         private void OnVesselGoOffRails(Vessel v)
         {
+            if (RealSolarSystemEditor.ForceVGPEOff) return;
+
             if (v.Landed && !v.Splashed)
             {
                 if (v.situation == Situations.PRELAUNCH)
